@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 0
-  gameTitle: 
+  gameTitle: Bait 'n Tackle
   gameIcon: {fileID: 0}
-  prompt: 
+  prompt: Don't Get Hooked
   singlePlayerScene: {fileID: 102900000, guid: c8794b18ebf765d588f46d3710ec33ef, type: 3}
   twoPlayerScene: {fileID: 0}
   controls: []
