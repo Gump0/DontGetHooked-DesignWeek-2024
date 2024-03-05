@@ -17,11 +17,11 @@ MonoBehaviour:
   gameTitle: 
   gameIcon: {fileID: 0}
   prompt: 
-  singlePlayerScene: {fileID: 102900000, guid: be5d765f8ccef55bd8a7bf3026fe2f21, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: c8794b18ebf765d588f46d3710ec33ef, type: 3}
   twoPlayerScene: {fileID: 0}
   controls: []
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team09/Scenes/MainScene.unity
+  singlePlayerScenePath: Assets/Team09/Scenes/ActualMainScene.unity
   twoPlayerScenePath: 
   postgameMessages: []
   bannerImage: {fileID: 0}
