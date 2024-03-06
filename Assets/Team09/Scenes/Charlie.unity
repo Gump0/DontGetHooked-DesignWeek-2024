@@ -123,67 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &875277393
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 57891742855699624, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_Name
-      value: FishCapsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105527611723374092, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4504675302512280775, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0a9fdea68a2f77bd0aa02ec419f220bc, type: 3}
 --- !u!1 &1169441578
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659837419964781000, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_Name
-      value: FishCapsule (1)
+      value: FishCapsule
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -440,6 +379,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1169441581}
-  - {fileID: 875277393}
   - {fileID: 3155357615917213587}
   - {fileID: 332273850443677443}
