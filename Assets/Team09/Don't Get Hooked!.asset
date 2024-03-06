@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 0
-<<<<<<< Updated upstream:Assets/Team09/Bait 'n Tackle.asset
-  gameTitle: Bait 'n Tackle
-=======
   gameTitle: Don't Get Hooked!
->>>>>>> Stashed changes:Assets/Team09/Don't Get Hooked!.asset
   gameIcon: {fileID: 0}
   prompt: Don't Get Hooked!
   singlePlayerScene: {fileID: 102900000, guid: 604f122914c684e8b8a070c260cefda3, type: 3}

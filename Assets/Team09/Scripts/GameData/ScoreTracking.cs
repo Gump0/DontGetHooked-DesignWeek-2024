@@ -7,11 +7,11 @@ namespace team09{
     public class ScoreTracking : MicrogameInputEvents{
         [SerializeField] private TMP_Text scoreDisplay, scoreText; // Reference to UI element
         private float currentPlayerScore, scoreIncreaseInterval = 10f; // SCORE TRACKING STUFF
-<<<<<<< Updated upstream
+
         [SerializeField] private bool hasGameStarted = false;
-=======
+
         public bool gameStarted;
->>>>>>> Stashed changes
+
         void Start(){
             GameObject scoreDisplayObject = GameObject.Find("ScoreNumber");
             scoreDisplay = scoreDisplayObject.GetComponent<TMP_Text>();
