@@ -4,18 +4,22 @@ using UnityEngine;
 using TMPro; // Needed Library
 
 namespace team09{
-    public class ScoreTracking : MonoBehaviour{
-        [SerializeField] private TMP_Text scoreDisplay; // Reference to UI element
+    public class ScoreTracking : MicrogameInputEvents{
+        [SerializeField] private TMP_Text scoreDisplay, scoreText; // Reference to UI element
         private float currentPlayerScore, scoreIncreaseInterval = 10f; // SCORE TRACKING STUFF
+        [SerializeField] private bool hasGameStarted = false;
         void Start(){
             GameObject scoreDisplayObject = GameObject.Find("ScoreNumber");
             scoreDisplay = scoreDisplayObject.GetComponent<TMP_Text>();
             if(scoreDisplay == null){
                 Debug.LogWarning("Score UI Object Reference Is Null");
+                scoreDisplay.enabled = false;
             }
         }
         void Update(){
-            DisplayScore();
+            if(hasGameStarted){
+                DisplayScore();
+            }
         }
         void DisplayScore(){
             //Calculate Score
@@ -25,6 +29,11 @@ namespace team09{
 
             //Display Text
             scoreDisplay.text = displayCurrentScore.ToString();
+        }
+        protected override void OnGameStart(){
+            hasGameStarted = true;
+            scoreDisplay.enabled = true;
+            scoreText.enabled = true;
         }
     }
 }
