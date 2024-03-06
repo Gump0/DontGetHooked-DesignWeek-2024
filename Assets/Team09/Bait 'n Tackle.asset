@@ -17,7 +17,7 @@ MonoBehaviour:
   gameTitle: Bait n Tackle
   gameIcon: {fileID: 0}
   prompt: 
-  singlePlayerScene: {fileID: 102900000, guid: c8794b18ebf765d588f46d3710ec33ef, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: 604f122914c684e8b8a070c260cefda3, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
   - label: Swim
@@ -25,7 +25,7 @@ MonoBehaviour:
     joiner: 0
     secondary: 0
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team09/Scenes/GlebTheGoat.unity
+  singlePlayerScenePath: Assets/Team09/Scenes/GAMESCENE.unity
   twoPlayerScenePath: 
   postgameMessages: []
   bannerImage: {fileID: 0}
