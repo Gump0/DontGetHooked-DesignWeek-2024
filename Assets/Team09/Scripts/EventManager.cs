@@ -7,7 +7,7 @@ using UnityEditor;
 
 namespace team09
 {
-    public class EventManager : MonoBehaviour
+    public class EventManager : MicrogameEvents
     {
         //Should the events be randomized or done in order
         //If true: one event will be selected randomly when the prior event ends (can only run one event at a time)
@@ -26,9 +26,6 @@ namespace team09
         // Start is called before the first frame update
         void Start()
         {
-            //Set start time
-            startTime = Time.timeAsDouble;
-
             //Initialize bullet events
             foreach (BulletEvent e in events)
             {
@@ -66,6 +63,12 @@ namespace team09
                     }
                 }
             }
+        }
+
+        protected override void OnGameStart()
+        {
+            //Set start time
+            startTime = Time.timeAsDouble;
         }
     }
 
