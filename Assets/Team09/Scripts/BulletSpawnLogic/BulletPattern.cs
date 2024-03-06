@@ -120,6 +120,9 @@ namespace team09
             }
         };
 
+        //Line bullet pattern
+        //Spawns a line of bullets
+        //Extra arguments: int density, float length
         public static spawnBehaviour line = (float bulletSpeed, Vector3 spawnPoint, float direction, Timer timer, GameObject bulletPrefab, object[] extraArgs) =>
         {
             //Test and grab required extra arguments
@@ -143,6 +146,9 @@ namespace team09
             }
         };
 
+        //Line with gap bullet pattern
+        //Spawns a line of bullets with a gap
+        //Extra arguments: int density, float length, float gapPosition, float gapSize
         public static spawnBehaviour lineWithGap = (float bulletSpeed, Vector3 spawnPoint, float direction, Timer timer, GameObject bulletPrefab, object[] extraArgs) =>
         {
             //Test and grab required extra arguments
@@ -172,6 +178,9 @@ namespace team09
             }
         };
 
+        //Bent line bullet pattern
+        //Spawns a line that's bent in the middle
+        //Extra arguments: int density, float length, float angle
         public static spawnBehaviour bentLine = (float bulletSpeed, Vector3 spawnPoint, float direction, Timer timer, GameObject bulletPrefab, object[] extraArgs) =>
         {
             //Test and grab required extra arguments
@@ -191,7 +200,6 @@ namespace team09
             float deltaPos = length / density;
             for(int i = 1; i < density; i++)
             {
-
                 Vector3 offset1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction + angle / 2), Mathf.Sin(Mathf.Deg2Rad * direction + angle / 2)) * deltaPos * i;
                 Vector3 offset2 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction - angle / 2), Mathf.Sin(Mathf.Deg2Rad * direction - angle / 2)) * deltaPos * i;
 
