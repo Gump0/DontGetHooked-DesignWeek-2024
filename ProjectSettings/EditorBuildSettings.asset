@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Examples/Team99/Tooth Rush/Scenes/Tooth Rush - 2P.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Team09/Scenes/PRIMARYSCENE.unity
-    guid: 2de0adf242af62d9baed59994ecc1d14
+    path: Assets/Team09/Scenes/GlebTheGoat.unity
+    guid: c8794b18ebf765d588f46d3710ec33ef
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 28bfde271760c454b943706b4892c800, type: 2}
