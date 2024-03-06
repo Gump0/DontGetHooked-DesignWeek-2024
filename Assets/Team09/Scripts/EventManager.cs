@@ -145,13 +145,28 @@ namespace team09
             bulletEvent.interval = EditorGUILayout.FloatField("Interval", bulletEvent.interval);
             bulletEvent.bulletPrefab = (GameObject)EditorGUILayout.ObjectField("Bullet Type", bulletEvent.bulletPrefab, typeof(GameObject), true);
 
-            if (bulletEvent.patternType == PatternType.Ring || bulletEvent.patternType == PatternType.RingWithGap)
+            switch (bulletEvent.patternType)
             {
-                bulletEvent.density = EditorGUILayout.IntField("Ring Density", bulletEvent.density);
-                if (bulletEvent.patternType == PatternType.RingWithGap)
-                {
-                    bulletEvent.gapSize = EditorGUILayout.FloatField("Gap Size", bulletEvent.gapSize);
-                }
+                case PatternType.Ring:
+                    bulletEvent.extraArgInt = EditorGUILayout.IntField("Ring Density", bulletEvent.extraArgInt);
+                    break;
+
+                case PatternType.RingWithGap:
+                    bulletEvent.extraArgInt = EditorGUILayout.IntField("Ring Density", bulletEvent.extraArgInt);
+                    bulletEvent.extraArgFloat1 = EditorGUILayout.FloatField("Gap Size", bulletEvent.extraArgFloat1);
+                    break;
+
+                case PatternType.Line:
+                    bulletEvent.extraArgInt = EditorGUILayout.IntField("Line Density", bulletEvent.extraArgInt);
+                    bulletEvent.extraArgFloat1 = EditorGUILayout.FloatField("Line Length", bulletEvent.extraArgFloat1);
+                    break;
+
+                case PatternType.LineWithGap:
+                    bulletEvent.extraArgInt = EditorGUILayout.IntField("Line Density", bulletEvent.extraArgInt);
+                    bulletEvent.extraArgFloat1 = EditorGUILayout.FloatField("Line Length", bulletEvent.extraArgFloat1);
+                    bulletEvent.extraArgFloat2 = EditorGUILayout.FloatField("Gap Position", bulletEvent.extraArgFloat2);
+                    bulletEvent.extraArgFloat3 = EditorGUILayout.FloatField("Gap Size", bulletEvent.extraArgFloat3);
+                    break;
             }
 
             EditorGUILayout.Space();

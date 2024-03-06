@@ -22,8 +22,10 @@ namespace team09
         public GameObject bulletPrefab;
 
         //Extra arguments for specific pattern types
-        public int density;
-        public float gapSize;
+        public int extraArgInt;
+        public float extraArgFloat1;
+        public float extraArgFloat2;
+        public float extraArgFloat3;
 
         //Behaviour parameters
         public Transform target;
@@ -58,6 +60,14 @@ namespace team09
                 case PatternType.RingWithGap:
                     this.pattern = new BulletPattern(BulletPattern.ringWithGap, bulletPrefab, interval);
                     break;
+
+                case PatternType.Line:
+                    this.pattern = new BulletPattern(BulletPattern.line, bulletPrefab, interval);
+                    break;
+
+                case PatternType.LineWithGap:
+                    this.pattern = new BulletPattern(BulletPattern.lineWithGap, bulletPrefab, interval);
+                    break;
             }
 
             //Initialize behaviour
@@ -65,24 +75,24 @@ namespace team09
             switch (behaviourType)
             {
                 case BehaviourType.None:
-                    this.behaviour = () => pattern.run(bulletSpeed, spawnPoint.position, direction, density, gapSize);
+                    this.behaviour = () => pattern.run(bulletSpeed, spawnPoint.position, direction, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
                 case BehaviourType.Aimed:
-                    this.behaviour = () => BulletSpawnBehaviours.aimed(pattern, spawnPoint.position, bulletSpeed, target.position, density, gapSize);
+                    this.behaviour = () => BulletSpawnBehaviours.aimed(pattern, spawnPoint.position, bulletSpeed, target.position, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
                 case BehaviourType.Spiral:
                     counter = new float[1] { 0f };
-                    this.behaviour = () => BulletSpawnBehaviours.spiral(pattern, spawnPoint.position, bulletSpeed, intervalAngle, counter, density, gapSize);
+                    this.behaviour = () => BulletSpawnBehaviours.spiral(pattern, spawnPoint.position, bulletSpeed, intervalAngle, counter, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
                 case BehaviourType.RandomRotation:
-                    this.behaviour = () => BulletSpawnBehaviours.randomRotate(pattern, spawnPoint.position, bulletSpeed, direction - variance, direction + variance, density, gapSize);
+                    this.behaviour = () => BulletSpawnBehaviours.randomRotate(pattern, spawnPoint.position, bulletSpeed, direction - variance, direction + variance, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
                 case BehaviourType.RandomPosition:
-                    this.behaviour = () => BulletSpawnBehaviours.randomPositionLine(pattern, spawnPoint.position, bulletSpeed, direction, -variance, variance, density, gapSize);
+                    this.behaviour = () => BulletSpawnBehaviours.randomPositionLine(pattern, spawnPoint.position, bulletSpeed, direction, -variance, variance, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
             }
         }

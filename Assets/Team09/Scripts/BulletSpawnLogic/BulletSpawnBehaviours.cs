@@ -62,9 +62,10 @@ namespace team09
         public static void randomPositionLine(BulletPattern pattern, Vector3 spawnPoint, float speed, float direction, float min, float max, params object[] extraArgs)
         {
             float offset = UnityEngine.Random.Range(min, max);
-            Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction), Mathf.Cos(direction)) * offset;
+            Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
             pattern.run(speed, pos, direction, extraArgs);
+            
         }
 
         //Random position on line behaviour
@@ -72,7 +73,7 @@ namespace team09
         public static void randomPositionLine(BulletPattern pattern, Vector3 spawnPoint, float speed, float direction, Func<float> randomFunc, params object[] extraArgs)
         {
             float offset = randomFunc();
-            Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction), Mathf.Cos(direction)) * offset;
+            Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
             pattern.run(speed, pos, direction, extraArgs);
         }
