@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <sourcePath>k__BackingField: 
   <destinationPath>k__BackingField: Imported
-  quickTestSkip: 0
+  quickTestSkip: 255
   quickTestPlayers: 1
   _avoidRepeatsWithin: 5
   _singlePlayer:

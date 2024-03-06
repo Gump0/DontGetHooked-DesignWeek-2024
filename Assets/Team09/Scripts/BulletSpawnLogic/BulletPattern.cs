@@ -67,8 +67,8 @@ namespace team09
         public static spawnBehaviour single = (float bulletSpeed, Vector3 spawnPoint, float direction, Timer timer, GameObject bulletPrefab, object[] extraArgs) =>
         {
             GameObject bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint, Quaternion.Euler(0, 0, direction));
-            //Bullet bullet = bulletObject.GetComponent<Bullet>();
-            //bullet.initialize(bulletSpeed);
+            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            bullet.Initialize(bulletSpeed);
         };
 
         //Ring bullet pattern
@@ -88,8 +88,8 @@ namespace team09
             for (int i = 0; i < 18; i++)
             {
                 GameObject bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint, Quaternion.Euler(0, 0, direction + 20 * i));
-                //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                //bullet.initialize(bulletSpeed);
+                Bullet bullet = bulletObject.GetComponent<Bullet>();
+                bullet.Initialize(bulletSpeed);
             }
         };
 
@@ -114,8 +114,8 @@ namespace team09
                 if (offset > gapSize / 2 && offset < 360 - gapSize / 2)
                 {
                     GameObject bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint, Quaternion.Euler(0, 0, direction + offset));
-                    //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                    //bullet.initialize(bulletSpeed);
+                    Bullet bullet = bulletObject.GetComponent<Bullet>();
+                    bullet.Initialize(bulletSpeed);
                 }
             }
         };
@@ -138,8 +138,8 @@ namespace team09
                 Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
                 GameObject bulletObject = GameObject.Instantiate(bulletPrefab, pos, Quaternion.Euler(0, 0, direction));
-                //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                //bullet.initialize(bulletSpeed);
+                Bullet bullet = bulletObject.GetComponent<Bullet>();
+                bullet.Initialize(bulletSpeed);
             }
         };
 
@@ -166,8 +166,8 @@ namespace team09
                     Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
                     GameObject bulletObject = GameObject.Instantiate(bulletPrefab, pos, Quaternion.Euler(0, 0, direction));
-                    //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                    //bullet.initialize(bulletSpeed);
+                    Bullet bullet = bulletObject.GetComponent<Bullet>();
+                    bullet.Initialize(bulletSpeed);
                 }
             }
         };
@@ -185,8 +185,8 @@ namespace team09
             float angle = (float)extraArgs[2];
 
             GameObject bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint, Quaternion.Euler(0, 0, direction));
-            //Bullet bullet = bulletObject.GetComponent<Bullet>();
-            //bullet.initialize(bulletSpeed);
+            Bullet bullet = bulletObject.GetComponent<Bullet>();
+            bullet.Initialize(bulletSpeed);
 
             float deltaPos = length / density;
             for(int i = 1; i < density; i++)
@@ -196,12 +196,12 @@ namespace team09
                 Vector3 offset2 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction - angle / 2), Mathf.Sin(Mathf.Deg2Rad * direction - angle / 2)) * deltaPos * i;
 
                 bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint + offset1, Quaternion.Euler(0, 0, direction));
-                //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                //bullet.initialize(bulletSpeed);
+                bullet = bulletObject.GetComponent<Bullet>();
+                bullet.Initialize(bulletSpeed);
 
                 bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint + offset2, Quaternion.Euler(0, 0, direction));
-                //Bullet bullet = bulletObject.GetComponent<Bullet>();
-                //bullet.initialize(bulletSpeed);
+                bullet = bulletObject.GetComponent<Bullet>();
+                bullet.Initialize(bulletSpeed);
             }
         };
     }

@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 669091437}
   - component: {fileID: 669091436}
   - component: {fileID: 669091435}
+  - component: {fileID: 669091439}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -277,7 +278,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669091434}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -363,6 +364,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669091439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669091434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870192b224bef1e499ebea839082fcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671088700
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,16 +407,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomized: 0
   events:
-  - patternType: 4
-    behaviourType: 4
+  - patternType: 5
+    behaviourType: 0
     spawnPoint: {fileID: 671088702}
     bulletSpeed: 5
     direction: -90
     interval: 1
     bulletPrefab: {fileID: 669091434}
-    extraArgInt: 30
-    extraArgFloat1: 20
-    extraArgFloat2: 0
+    extraArgInt: 5
+    extraArgFloat1: 7
+    extraArgFloat2: 45
     extraArgFloat3: 2
     target: {fileID: 0}
     intervalAngle: 0
