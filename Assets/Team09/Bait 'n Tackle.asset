@@ -10,18 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24fbde2c24ab1544bd81b52842e8ec5, type: 3}
-  m_Name: FishHookHell
+  m_Name: Bait 'n Tackle
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 0
-  gameTitle: Bait 'n Tackle
+  gameTitle: Bait n Tackle
   gameIcon: {fileID: 0}
-  prompt: Don't Get Hooked
-  singlePlayerScene: {fileID: 102900000, guid: 2de0adf242af62d9baed59994ecc1d14, type: 3}
+  prompt: 
+  singlePlayerScene: {fileID: 102900000, guid: c8794b18ebf765d588f46d3710ec33ef, type: 3}
   twoPlayerScene: {fileID: 0}
-  controls: []
+  controls:
+  - label: Swim
+    primary: 124
+    joiner: 0
+    secondary: 0
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team09/Scenes/PRIMARYSCENE.unity
+  singlePlayerScenePath: Assets/Team09/Scenes/GlebTheGoat.unity
   twoPlayerScenePath: 
   postgameMessages: []
   bannerImage: {fileID: 0}
