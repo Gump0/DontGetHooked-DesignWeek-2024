@@ -17,11 +17,11 @@ MonoBehaviour:
   gameTitle: Bait 'n Tackle
   gameIcon: {fileID: 0}
   prompt: Don't Get Hooked
-  singlePlayerScene: {fileID: 102900000, guid: c8794b18ebf765d588f46d3710ec33ef, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: 2de0adf242af62d9baed59994ecc1d14, type: 3}
   twoPlayerScene: {fileID: 0}
   controls: []
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team09/Scenes/ActualMainScene.unity
+  singlePlayerScenePath: Assets/Team09/Scenes/PRIMARYSCENE.unity
   twoPlayerScenePath: 
   postgameMessages: []
   bannerImage: {fileID: 0}
