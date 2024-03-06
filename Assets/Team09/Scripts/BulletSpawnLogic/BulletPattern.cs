@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 namespace team09
 {
@@ -13,7 +14,8 @@ namespace team09
         Ring,
         RingWithGap,
         Line,
-        LineWithGap
+        LineWithGap,
+        BentLine
     }
 
     //Bullet Pattern class
@@ -167,6 +169,39 @@ namespace team09
                     //Bullet bullet = bulletObject.GetComponent<Bullet>();
                     //bullet.initialize(bulletSpeed);
                 }
+            }
+        };
+
+        public static spawnBehaviour bentLine = (float bulletSpeed, Vector3 spawnPoint, float direction, Timer timer, GameObject bulletPrefab, object[] extraArgs) =>
+        {
+            //Test and grab required extra arguments
+            if (extraArgs.Length < 3 || extraArgs[0] is not int || extraArgs[1] is not float || extraArgs[2] is not float)
+            {
+                Debug.LogError("Improper Parameters given\nArrow Bullet Pattern Extra Parameters: int density, float length, float angle");
+                return;
+            }
+            int density = (int)extraArgs[0];
+            float length = (float)extraArgs[1];
+            float angle = (float)extraArgs[2];
+
+            GameObject bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint, Quaternion.Euler(0, 0, direction));
+            //Bullet bullet = bulletObject.GetComponent<Bullet>();
+            //bullet.initialize(bulletSpeed);
+
+            float deltaPos = length / density;
+            for(int i = 1; i < density; i++)
+            {
+
+                Vector3 offset1 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction + angle / 2), Mathf.Sin(Mathf.Deg2Rad * direction + angle / 2)) * deltaPos * i;
+                Vector3 offset2 = new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction - angle / 2), Mathf.Sin(Mathf.Deg2Rad * direction - angle / 2)) * deltaPos * i;
+
+                bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint + offset1, Quaternion.Euler(0, 0, direction));
+                //Bullet bullet = bulletObject.GetComponent<Bullet>();
+                //bullet.initialize(bulletSpeed);
+
+                bulletObject = GameObject.Instantiate(bulletPrefab, spawnPoint + offset2, Quaternion.Euler(0, 0, direction));
+                //Bullet bullet = bulletObject.GetComponent<Bullet>();
+                //bullet.initialize(bulletSpeed);
             }
         };
     }

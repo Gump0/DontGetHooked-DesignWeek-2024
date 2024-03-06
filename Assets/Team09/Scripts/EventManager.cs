@@ -170,6 +170,12 @@ namespace team09
                     bulletEvent.extraArgFloat2 = EditorGUILayout.FloatField("Gap Position", bulletEvent.extraArgFloat2);
                     bulletEvent.extraArgFloat3 = EditorGUILayout.FloatField("Gap Size", bulletEvent.extraArgFloat3);
                     break;
+
+                case PatternType.BentLine:
+                    bulletEvent.extraArgInt = EditorGUILayout.IntField("Line Density", bulletEvent.extraArgInt);
+                    bulletEvent.extraArgFloat1 = EditorGUILayout.FloatField("Line Length", bulletEvent.extraArgFloat1);
+                    bulletEvent.extraArgFloat2 = EditorGUILayout.FloatField("Bend Angle", bulletEvent.extraArgFloat2);
+                    break;
             }
 
             EditorGUILayout.Space();

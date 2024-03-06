@@ -68,6 +68,10 @@ namespace team09
                 case PatternType.LineWithGap:
                     this.pattern = new BulletPattern(BulletPattern.lineWithGap, bulletPrefab, interval);
                     break;
+
+                case PatternType.BentLine:
+                    this.pattern = new BulletPattern(BulletPattern.bentLine, bulletPrefab, interval);
+                    break;
             }
 
             //Initialize behaviour
