@@ -11,7 +11,9 @@ namespace team09
         Aimed,
         Spiral,
         RandomRotation,
-        RandomPosition
+        RandomPosition,
+        RandomSpawnPoint,
+        RandomSpawnPointAimed
     }
 
     //Bullet Spawn Behaviours class
@@ -76,6 +78,23 @@ namespace team09
             Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
             pattern.run(speed, pos, direction, extraArgs);
+        }
+
+        public static void randomSpawnPoint(BulletPattern pattern, List<Transform> spawnPoints, float speed, float direction, params object[] extraArgs)
+        {
+            Vector3 spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)].position;
+
+            pattern.run(speed, spawnPoint, direction, extraArgs);
+        }
+
+        public static void randomSpawnPointAimed(BulletPattern pattern, List<Transform> spawnPoints, float speed, float direction, Vector3 target, params object[] extraArgs)
+        {
+            Vector3 spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)].position;
+
+            Vector3 targetDirection = target - spawnPoint;
+            float targetAngle = Vector2.SignedAngle(Vector2.right, targetDirection);
+
+            pattern.run(speed, spawnPoint, targetAngle, extraArgs);
         }
     }
 }

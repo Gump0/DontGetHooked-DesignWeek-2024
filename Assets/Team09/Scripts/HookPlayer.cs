@@ -6,7 +6,7 @@ using UnityEngine;
 //LOGIC THAT IS USED WHENEVER THE PLAYER COLLIDES WITH A HOOK
 namespace team09{
     [RequireComponent(typeof(CircleCollider2D))]
-         public class HookPlayer : MonoBehaviour{
+        public class HookPlayer : MonoBehaviour{
 
         public GM gameManager;
 
@@ -24,9 +24,6 @@ namespace team09{
 
         private IEnumerator CollideRoutine(){
             
-
-
-                GetComponent<PlayerSwim>().enabled = false;
 
             if(hookedSFX.isPlaying == false)
             {

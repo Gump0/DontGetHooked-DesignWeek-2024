@@ -8,7 +8,7 @@ namespace team09
 
 {
 
-    public class MyScript : MicrogameEvents
+    public class EventTriggerScript : MicrogameEvents
 
     {
 
@@ -16,6 +16,8 @@ namespace team09
         public ScoreTracking scoretrack;
         public FoodSpawner foodspawn;
         public GameObject eventManager;
+
+        private bool gameEndCalled = false;
         protected override void OnGameStart()
         {
 
@@ -26,7 +28,7 @@ namespace team09
 
             }
             foodspawn.gameStarted = true;
-            eventManager.SetActive(true);
+            gamemanager.gameEnded = false;
 
 
         }
@@ -63,7 +65,7 @@ namespace team09
 
         public void Update()
         {
-            if(gamemanager.alive == false)
+            if(gamemanager.alive == false && !gameEndCalled)
             {
                 gamemanager.gameEnded = true;
                 scoretrack.hasGameStarted = false;
@@ -75,7 +77,7 @@ namespace team09
         public void gameEnd()
         {
             ReportGameCompletedEarly();
-            
+            gameEndCalled = true;
 
         }
 

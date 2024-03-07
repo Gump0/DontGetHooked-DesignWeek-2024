@@ -22,7 +22,7 @@ namespace team09
         {
             if (other.CompareTag("GameController"))
             {
-                Debug.Log("eat");
+                //Debug.Log("eat");
 
                 FindObjectOfType<ScoreTracking>().currentPlayerScore += 50;
                 textanim.Play("Flash");

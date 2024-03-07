@@ -32,6 +32,7 @@ namespace team09
         public float intervalAngle;
         private float[] counter;
         public float variance;
+        public List<Transform> spawnPoints;
 
         //Timing parameters
         public float startTime;
@@ -97,6 +98,14 @@ namespace team09
 
                 case BehaviourType.RandomPosition:
                     this.behaviour = () => BulletSpawnBehaviours.randomPositionLine(pattern, spawnPoint.position, bulletSpeed, direction, -variance, variance, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
+                    break;
+
+                case BehaviourType.RandomSpawnPoint:
+                    this.behaviour = () => BulletSpawnBehaviours.randomSpawnPoint(pattern, spawnPoints, bulletSpeed, direction, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
+                    break;
+
+                case BehaviourType.RandomSpawnPointAimed:
+                    this.behaviour = () => BulletSpawnBehaviours.randomSpawnPointAimed(pattern, spawnPoints, bulletSpeed, direction, target.position, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
             }
         }

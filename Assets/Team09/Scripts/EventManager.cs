@@ -87,6 +87,7 @@ namespace team09
     {
         private bool listToggle;
         private List<bool> elementToggles = new List<bool>();
+        private List<bool> spawnPointsToggles = new List<bool>();
 
         public override void OnInspectorGUI()
         {
@@ -113,10 +114,12 @@ namespace team09
                 while (manager.events.Count > elementToggles.Count)
                 {
                     elementToggles.Add(false);
+                    spawnPointsToggles.Add(false);
                 }
                 while (manager.events.Count < elementToggles.Count)
                 {
                     elementToggles.RemoveAt(elementToggles.Count - 1);
+                    spawnPointsToggles.RemoveAt(spawnPointsToggles.Count - 1);
                 }
 
                 for (int i = 0; i < manager.events.Count; i++)
@@ -125,7 +128,9 @@ namespace team09
 
                     if (elementToggles[i])
                     {
-                        DrawPattern(manager.events[i]);
+                        bool transformsToggle = spawnPointsToggles[i];
+                        DrawPattern(manager.events[i], ref transformsToggle);
+                        spawnPointsToggles[i] = transformsToggle;
 
                         DrawBehaviour(manager.events[i]);
 
@@ -143,13 +148,41 @@ namespace team09
             }
         }
 
-        private static void DrawPattern(BulletEvent bulletEvent)
+        private static void DrawPattern(BulletEvent bulletEvent, ref bool transfomsToggle)
         {
             EditorGUILayout.LabelField("Pattern");
 
             bulletEvent.patternType = (PatternType)EditorGUILayout.EnumPopup("Bullet Pattern Type", bulletEvent.patternType);
 
-            bulletEvent.spawnPoint = (Transform)EditorGUILayout.ObjectField("Spawn Point", bulletEvent.spawnPoint, typeof(Transform), true);
+            if(bulletEvent.behaviourType == BehaviourType.RandomSpawnPoint || bulletEvent.behaviourType == BehaviourType.RandomSpawnPointAimed)
+            {
+                EditorGUILayout.BeginHorizontal();
+                transfomsToggle = EditorGUILayout.Foldout(transfomsToggle, "Spawn Points", true);
+                int size = Mathf.Max(0, EditorGUILayout.IntField(bulletEvent.spawnPoints.Count));
+                EditorGUILayout.EndHorizontal();
+
+                if (transfomsToggle)
+                {
+                    while(size > bulletEvent.spawnPoints.Count)
+                    {
+                        bulletEvent.spawnPoints.Add(null);
+                    }
+                    while(size < bulletEvent.spawnPoints.Count)
+                    {
+                        bulletEvent.spawnPoints.RemoveAt(bulletEvent.spawnPoints.Count - 1);
+                    }
+
+                    for(int i = 0; i < bulletEvent.spawnPoints.Count; i++)
+                    {
+                        bulletEvent.spawnPoints[i] = (Transform)EditorGUILayout.ObjectField("Spawn Point " + i, bulletEvent.spawnPoints[i], typeof(Transform), true);
+                    }
+                }
+            }
+            else
+            {
+                bulletEvent.spawnPoint = (Transform)EditorGUILayout.ObjectField("Spawn Point", bulletEvent.spawnPoint, typeof(Transform), true);
+            }
+
             bulletEvent.bulletSpeed = EditorGUILayout.FloatField("Bullet Speed", bulletEvent.bulletSpeed);
             bulletEvent.interval = EditorGUILayout.FloatField("Interval", bulletEvent.interval);
             bulletEvent.bulletPrefab = (GameObject)EditorGUILayout.ObjectField("Bullet Type", bulletEvent.bulletPrefab, typeof(GameObject), true);
@@ -215,6 +248,14 @@ namespace team09
                 case BehaviourType.RandomPosition:
                     bulletEvent.direction = EditorGUILayout.FloatField("Direction", bulletEvent.direction);
                     bulletEvent.variance = EditorGUILayout.FloatField("Position Variance", bulletEvent.variance);
+                    break;
+
+                case BehaviourType.RandomSpawnPoint:
+                    bulletEvent.direction = EditorGUILayout.FloatField("Direction", bulletEvent.direction);
+                    break;
+
+                case BehaviourType.RandomSpawnPointAimed:
+                    bulletEvent.target = (Transform)EditorGUILayout.ObjectField("Target", bulletEvent.target, typeof(Transform), true);
                     break;
             }
 

@@ -675,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &274601881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,11 +691,11 @@ MonoBehaviour:
   randomized: 1
   events:
   - patternType: 0
-    behaviourType: 1
+    behaviourType: 6
     spawnPoint: {fileID: 1921015666}
     bulletSpeed: 5
     direction: -90
-    interval: 1
+    interval: 0.75
     bulletPrefab: {fileID: 586217065}
     extraArgInt: 5
     extraArgFloat1: 7
@@ -704,232 +704,12 @@ MonoBehaviour:
     target: {fileID: 1722960775}
     intervalAngle: 90
     variance: 3
+    spawnPoints:
+    - {fileID: 1921015666}
+    - {fileID: 1454490642}
+    - {fileID: 1298302899}
     startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 2
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 3
-    behaviourType: 2
-    spawnPoint: {fileID: 615515299}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 2
-  - patternType: 3
-    behaviourType: 2
-    spawnPoint: {fileID: 615515299}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 3
-    behaviourType: 3
-    spawnPoint: {fileID: 1666326984}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 3
-    behaviourType: 3
-    spawnPoint: {fileID: 1666326984}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 1
-    behaviourType: 2
-    spawnPoint: {fileID: 1666326984}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1477995022}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 2
-  - patternType: 0
-    behaviourType: 3
-    spawnPoint: {fileID: 1477995022}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 3
-    spawnPoint: {fileID: 1984314488}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1722960775}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 2
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1477995022}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 5
-    behaviourType: 4
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1666326984}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 3
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1666326984}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 4
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1666326984}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 4
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1666326984}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
-  - patternType: 0
-    behaviourType: 4
-    spawnPoint: {fileID: 1454490642}
-    bulletSpeed: 5
-    direction: -90
-    interval: 1
-    bulletPrefab: {fileID: 586217065}
-    extraArgInt: 5
-    extraArgFloat1: 7
-    extraArgFloat2: 45
-    extraArgFloat3: 2
-    target: {fileID: 1666326984}
-    intervalAngle: 90
-    variance: 3
-    startTime: 0
-    duration: 1
+    duration: 10
 --- !u!4 &274601882
 Transform:
   m_ObjectHideFlags: 0
@@ -4025,29 +3805,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1343319603708734658, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
-      propertyPath: m_SortingOrder
-      value: 81
-      objectReference: {fileID: 0}
     - target: {fileID: 4705362223610236186, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
       propertyPath: m_Name
       value: Hook
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705362223610236186, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721964634468948415, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
-      propertyPath: m_SortingOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895523487023873865, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895523487023873865, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.38
       objectReference: {fileID: 0}
     - target: {fileID: 6795297410890446744, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
       propertyPath: m_LocalPosition.x

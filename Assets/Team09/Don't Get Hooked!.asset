@@ -17,8 +17,8 @@ MonoBehaviour:
   gameTitle: Don't Get Hooked!
   gameIcon: {fileID: 0}
   announcerText: Don't Get Hooked!
-  announcerAudioFile: Get Hooked-RX10MDc_164-01
-  _announcerAudio: {fileID: 8300000, guid: 62687329f9b8b734c8d5df6fb4e7746a, type: 3}
+  announcerAudioFile: 
+  _announcerAudio: {fileID: 0}
   singlePlayerScene: {fileID: 102900000, guid: 27f36324ee74f8672b15e5fe4208d830, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:

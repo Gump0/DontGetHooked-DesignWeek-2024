@@ -28,8 +28,11 @@ namespace team09
         // Start is called before the first frame update
         void Start()
         {
+            alive = true;
             endAnimationPlayed = false;
             canHook = false;
+            gameEnded = false;
+            //GameObject.FindWithTag("GameController").GetComponent<PlayerSwim>().enabled = true;
         }
 
         // Update is called once per frame
