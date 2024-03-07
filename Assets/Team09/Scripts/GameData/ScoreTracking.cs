@@ -6,7 +6,7 @@ using TMPro; // Needed Library
 namespace team09{
     public class ScoreTracking : MicrogameInputEvents{
         [SerializeField] private TMP_Text scoreDisplay, scoreText; // Reference to UI element
-        private float currentPlayerScore, scoreIncreaseInterval = 10f; // SCORE TRACKING STUFF
+        public float currentPlayerScore, scoreIncreaseInterval = 10f; // SCORE TRACKING STUFF
 
         [SerializeField] public bool hasGameStarted = false;
 
@@ -14,7 +14,7 @@ namespace team09{
 
         void Start(){
             GameObject scoreDisplayObject = GameObject.Find("ScoreNumber");
-            scoreDisplay = scoreDisplayObject.GetComponent<TMP_Text>();
+          //  scoreDisplay = scoreDisplayObject.GetComponent<TMP_Text>();
             if(scoreDisplay == null){
                 Debug.LogWarning("Score UI Object Reference Is Null");
                 scoreDisplay.enabled = false;

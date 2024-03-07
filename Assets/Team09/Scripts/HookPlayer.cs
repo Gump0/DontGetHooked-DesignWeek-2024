@@ -18,6 +18,7 @@ namespace team09{
                     StartCoroutine("CollideRoutine");
                 }
             }
+            
         }
 
         private IEnumerator CollideRoutine(){

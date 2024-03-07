@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using team09;
+using team99;
 using UnityEngine;
 
 namespace team09
@@ -18,19 +19,15 @@ namespace team09
         {
             if (other.CompareTag("GameController") == true)
             {
-                FindObjectOfType<FoodSpawner>().foodSpawned = false;
-                FindObjectOfType<PlayerSwim>().playerFishMoveSpeed += 0.01f;
-                Destroy(this.gameObject);
+                Debug.Log("eat");
+                StartCoroutine("IsEaten");
             }
 
         }
 
-        public void isEaten()
-        {
-            FindObjectOfType<FoodSpawner>().foodSpawned = false;
-           FindObjectOfType<PlayerSwim>().playerFishMoveSpeed += 0.01f;
-            Destroy(this.gameObject);
-        }
+        
+
+        
 
         // Update is called once per frame
         void Update()

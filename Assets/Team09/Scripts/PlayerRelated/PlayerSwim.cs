@@ -13,13 +13,13 @@ namespace team09{
         void Update(){
             Swim();
 
-            if (swimDir == new Vector2(1,0))
+            if (swimDir == new Vector2(1,0) || swimDir == new Vector2(1, 1) || swimDir == new Vector2(1, -1))
             {
                 sr.flipX = false;
                 
             }
 
-            if (swimDir == new Vector2(-1, 0))
+            if (swimDir == new Vector2(-1, 0) || swimDir == new Vector2(-1, -1) || swimDir == new Vector2(-1, 1))
             {
                 sr.flipX = true;
                 
