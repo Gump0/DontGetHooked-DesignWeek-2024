@@ -9,7 +9,7 @@ namespace team09{
         public SpriteRenderer sr;
        
 
-        [SerializeField] private float playerFishMoveSpeed; // Player movement speed
+        [SerializeField] public float playerFishMoveSpeed; // Player movement speed
         void Update(){
             Swim();
 

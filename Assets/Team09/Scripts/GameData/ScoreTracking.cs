@@ -8,7 +8,7 @@ namespace team09{
         [SerializeField] private TMP_Text scoreDisplay, scoreText; // Reference to UI element
         private float currentPlayerScore, scoreIncreaseInterval = 10f; // SCORE TRACKING STUFF
 
-        [SerializeField] private bool hasGameStarted = false;
+        [SerializeField] public bool hasGameStarted = false;
 
         public bool gameStarted;
 

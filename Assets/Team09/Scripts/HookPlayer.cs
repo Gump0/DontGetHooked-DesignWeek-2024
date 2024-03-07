@@ -10,19 +10,26 @@ namespace team09{
 
         public GM gameManager;
 
+
         void OnTriggerEnter2D(Collider2D other){
             if(other.CompareTag ("Player")){
-                StartCoroutine("CollideRoutine");
+                if (gameManager.canHook == true)
+                {
+                    StartCoroutine("CollideRoutine");
+                }
             }
         }
 
         private IEnumerator CollideRoutine(){
+            
 
-            GetComponent<PlayerSwim>().enabled = false;
 
-            gameManager.alive = false;
-            gameManager.gameEnded = true;
-            return null;
+                GetComponent<PlayerSwim>().enabled = false;
+
+                gameManager.alive = false;
+                gameManager.gameEnded = true;
+                return null;
+            
         }
     }   
 }
