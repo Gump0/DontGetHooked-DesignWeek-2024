@@ -35,7 +35,7 @@ namespace team09
 
 
                 
-                FindObjectOfType<PlayerSwim>().playerFishMoveSpeed += 0.0003f;
+                FindObjectOfType<PlayerSwim>().playerFishMoveSpeed += 0.001f;
                 Quaternion newRotation = Quaternion.Euler(0, 0, 0);
                 if (spawned == false)
                 {
