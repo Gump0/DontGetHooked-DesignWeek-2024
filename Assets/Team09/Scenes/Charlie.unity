@@ -4034,7 +4034,7 @@ PrefabInstance:
       objectReference: {fileID: 1302104797}
     - target: {fileID: 1224894881323778081, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: playerFishMoveSpeed
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2382287964213151181, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_LocalPosition.x
