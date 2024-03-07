@@ -17,6 +17,8 @@ namespace team09
         //List of bullet events
         public List<BulletEvent> events;
 
+        private bool start = false;
+
         //Time at which the manager is initialized
         private double startTime;
         //The currently playing event
@@ -36,6 +38,8 @@ namespace team09
         // Update is called once per frame
         void Update()
         {
+            if (!start) return;
+
             double activeTime = Time.timeAsDouble - startTime;
 
             if (randomized)
@@ -69,6 +73,8 @@ namespace team09
         {
             //Set start time
             startTime = Time.timeAsDouble;
+
+            start = true;
         }
     }
 
