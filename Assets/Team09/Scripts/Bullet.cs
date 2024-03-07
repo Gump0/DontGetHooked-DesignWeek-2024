@@ -7,10 +7,10 @@ namespace team09
     public class Bullet : MonoBehaviour
     {
         //Movement speed of the bullet
-        private float speed;
+        protected float speed;
 
         //Reference to the bullet's rigidbody2d
-        private Rigidbody2D rb;
+        protected Rigidbody2D rb;
 
         // Start is called before the first frame update
         void Start()

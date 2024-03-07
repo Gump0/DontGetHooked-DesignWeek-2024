@@ -43,10 +43,10 @@ GameObject:
   - component: {fileID: 6795297410890446744}
   - component: {fileID: 3293858396528894252}
   - component: {fileID: 8040980113813393468}
-  - component: {fileID: 3555740389469358301}
+  - component: {fileID: 9045738197673654388}
   m_Layer: 0
   m_Name: Hook
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_Offset: {x: 0.44, y: -0.59}
   serializedVersion: 2
   m_Radius: 0.23305154
---- !u!114 &3555740389469358301
+--- !u!114 &9045738197673654388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4705362223610236186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870192b224bef1e499ebea839082fcaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ea32fc52f1d25f4798455942f4daea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5472281118172723981
@@ -167,8 +167,8 @@ Transform:
   m_GameObject: {fileID: 5472281118172723981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 8.38, z: 0}
+  m_LocalScale: {x: 2, y: 3.67, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2842756076297226969}
@@ -213,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 52
   m_Sprite: {fileID: 21300000, guid: 496495feb0860df5e848b811a7dcf3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -300,7 +300,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 81
   m_Sprite: {fileID: -1933496571, guid: 15cc1a53a3ae75a488a10b1e2c2338ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
