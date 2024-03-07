@@ -14,10 +14,9 @@ namespace team09
 
         
 
-        public GM gameManager;
-        public PlayerSwim PS;
-        public FoodSpawner FS;
+       
         private bool spawned;
+        public Animator textanim;
 
         void OnTriggerEnter2D(Collider2D other)
         {
@@ -26,6 +25,8 @@ namespace team09
                 Debug.Log("eat");
 
                 FindObjectOfType<ScoreTracking>().currentPlayerScore += 50;
+                textanim.Play("Flash");
+
 
                 if(eatSFX.isPlaying == false)
                 {

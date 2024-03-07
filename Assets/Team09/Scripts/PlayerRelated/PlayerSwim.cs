@@ -14,17 +14,29 @@ namespace team09{
         void Update(){
             Swim();
 
-            if (swimDir == new Vector2(1,0) || swimDir == new Vector2(1, 1) || swimDir == new Vector2(1, -1))
-            {
-                sr.flipX = false;
+            //if (swimDir == new Vector2(1,0) || swimDir == new Vector2(1, 1) || swimDir == new Vector2(1, -1))
+            //{
+            //    sr.flipX = false;
                 
-            }
+            //}
 
-            if (swimDir == new Vector2(-1, 0) || swimDir == new Vector2(-1, -1) || swimDir == new Vector2(-1, 1))
+
+            if(swimDir.x < 0)
             {
                 sr.flipX = true;
-                
+
             }
+
+            if(swimDir.x > 0)
+            {
+                sr.flipX = false;
+            }
+
+            //if (swimDir == new Vector2(-1, 0) || swimDir == new Vector2(-1, -1) || swimDir == new Vector2(-1, 1))
+            //{
+            //    sr.flipX = true;
+                
+            //}
         }
         public void Swim(){
             swimDir = stick.normalized; // (0, 0), (±1, 0), (0, ±1), (±0. 707, ±0.707)

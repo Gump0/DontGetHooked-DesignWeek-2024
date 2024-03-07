@@ -15,6 +15,7 @@ namespace team09
         public GM gamemanager;
         public ScoreTracking scoretrack;
         public FoodSpawner foodspawn;
+        public GameObject eventManager;
         protected override void OnGameStart()
         {
 
@@ -25,6 +26,7 @@ namespace team09
 
             }
             foodspawn.gameStarted = true;
+            eventManager.SetActive(true);
 
 
         }
