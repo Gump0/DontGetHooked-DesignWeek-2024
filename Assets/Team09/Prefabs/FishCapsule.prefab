@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5301556412279436610}
   - component: {fileID: 6728779407254256262}
-  - component: {fileID: 4277854546624838151}
   m_Layer: 0
   m_Name: Hook_Visual
   m_TagString: Untagged
@@ -170,27 +169,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!135 &4277854546624838151
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131008144388355853}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: -0.12, y: -0.19, z: 0}
 --- !u!1 &6485832284463862165
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +339,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2382287964213151181}
   - component: {fileID: 1224894881323778081}
-  - component: {fileID: 9016206112652209843}
   - component: {fileID: -1743296844470896387}
+  - component: {fileID: 6188850148597536034}
   m_Layer: 0
   m_Name: FishCapsule
   m_TagString: Untagged
@@ -399,28 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getInputFrom: 0
+  sr: {fileID: 1715459679132755793}
   playerFishMoveSpeed: 0.01
---- !u!135 &9016206112652209843
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7659837419964781000}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.465
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1743296844470896387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +391,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8ed3f9e542f38f5baedf9d6705498e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &6188850148597536034
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659837419964781000}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18, y: 0.04}
+  serializedVersion: 2
+  m_Radius: 0.4411824
 --- !u!1 &7736851650827795031
 GameObject:
   m_ObjectHideFlags: 0

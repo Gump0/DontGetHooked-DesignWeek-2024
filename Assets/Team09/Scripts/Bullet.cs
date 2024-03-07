@@ -16,6 +16,7 @@ namespace team09
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+
         }
 
         private void FixedUpdate()

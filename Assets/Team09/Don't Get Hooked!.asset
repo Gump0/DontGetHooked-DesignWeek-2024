@@ -17,7 +17,7 @@ MonoBehaviour:
   gameTitle: Don't Get Hooked!
   gameIcon: {fileID: 0}
   prompt: Don't Get Hooked!
-  singlePlayerScene: {fileID: 102900000, guid: 604f122914c684e8b8a070c260cefda3, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: 27f36324ee74f8672b15e5fe4208d830, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
   - label: Swim
@@ -25,7 +25,7 @@ MonoBehaviour:
     joiner: 0
     secondary: 0
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team09/Scenes/GAMESCENE.unity
+  singlePlayerScenePath: Assets/Team09/Scenes/Charlie.unity
   twoPlayerScenePath: 
   postgameMessages:
   - 'Fun Fact: Fish Can''t Walk.'
