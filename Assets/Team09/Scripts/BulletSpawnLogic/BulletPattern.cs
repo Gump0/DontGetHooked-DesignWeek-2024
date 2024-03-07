@@ -134,11 +134,11 @@ namespace team09
             int density = (int)extraArgs[0];
             float length = (float)extraArgs[1];
 
-            float deltaPos = density / length;
+            float deltaPos = length / density;
             for(int i = 0; i < density; i++)
             {
                 float offset = deltaPos * i - length / 2;
-                Vector3 pos = spawnPoint + new Vector3(Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
+                Vector3 pos = spawnPoint + new Vector3(-Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
 
                 GameObject bulletObject = GameObject.Instantiate(bulletPrefab, pos, Quaternion.Euler(0, 0, direction));
                 Bullet bullet = bulletObject.GetComponent<Bullet>();

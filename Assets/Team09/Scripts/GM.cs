@@ -8,7 +8,7 @@ using UnityEngine;
 namespace team09
 {
 
-    public class GM : MonoBehaviour
+    public class GM : MicrogameEvents
     {
         public bool gameLaunched;
         public bool gameStarted;
@@ -32,7 +32,13 @@ namespace team09
             endAnimationPlayed = false;
             canHook = false;
             gameEnded = false;
-            //GameObject.FindWithTag("GameController").GetComponent<PlayerSwim>().enabled = true;
+
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("GameController");
+            foreach (GameObject objectWithTag in objectsWithTag)
+            {
+                SpriteRenderer sr = objectWithTag.GetComponent<PlayerSwim>().sr;
+                sr.enabled = false;
+            }
         }
 
         // Update is called once per frame
@@ -81,7 +87,15 @@ namespace team09
             }
         }
 
-
+        protected override void OnGameStart()
+        {
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("GameController");
+            foreach(GameObject objectWithTag in objectsWithTag)
+            {
+                SpriteRenderer sr = objectWithTag.GetComponent<PlayerSwim>().sr;
+                sr.enabled = true;
+            }
+        }
 
 
 

@@ -30,6 +30,7 @@ namespace team09
         //Behaviour parameters
         public Transform target;
         public float intervalAngle;
+        public float intervalDistance;
         private float[] counter;
         public float variance;
         public List<Transform> spawnPoints;
@@ -87,9 +88,18 @@ namespace team09
                     this.behaviour = () => BulletSpawnBehaviours.aimed(pattern, spawnPoint.position, bulletSpeed, target.position, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
+                case BehaviourType.AimedPosition:
+                    this.behaviour = () => BulletSpawnBehaviours.aimedPosition(pattern, spawnPoint.position, bulletSpeed, direction, target.position, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
+                    break;
+
                 case BehaviourType.Spiral:
                     counter = new float[1] { 0f };
-                    this.behaviour = () => BulletSpawnBehaviours.spiral(pattern, spawnPoint.position, bulletSpeed, intervalAngle, counter, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
+                    this.behaviour = () => BulletSpawnBehaviours.spiral(pattern, spawnPoint.position, bulletSpeed, direction, intervalAngle, counter, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
+                    break;
+
+                case BehaviourType.MoveLine:
+                    counter = new float[1] { 0f };
+                    this.behaviour = () => BulletSpawnBehaviours.moveLine(pattern, spawnPoint.position, bulletSpeed, direction, intervalDistance, counter, extraArgInt, extraArgFloat1, extraArgFloat2, extraArgFloat3);
                     break;
 
                 case BehaviourType.RandomRotation:

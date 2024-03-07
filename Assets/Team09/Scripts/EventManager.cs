@@ -14,13 +14,13 @@ namespace team09
         //If false: events will begin at their set start time and end when their duration is complete
         public bool randomized;
 
+        public int testEvent;
+
         //List of bullet events
         public List<BulletEvent> events;
 
-        private bool start = false;
-
         //Time at which the manager is initialized
-        private double startTime;
+        private double startTime = -1;
         //The currently playing event
         //Only used in randomized mode
         private BulletEvent currentEvent;
@@ -38,7 +38,7 @@ namespace team09
         // Update is called once per frame
         void Update()
         {
-            if (!start) return;
+            if (startTime <= -0.1 || events.Count <= 0) return;
 
             double activeTime = Time.timeAsDouble - startTime;
 
@@ -48,6 +48,7 @@ namespace team09
                 if (currentEvent == null || activeTime > currentEvent.startTime + currentEvent.duration)
                 {
                     currentEvent = events[UnityEngine.Random.Range(0, events.Count)];
+                    //currentEvent = events[testEvent];
                     currentEvent.startTime = (float)activeTime;
                 }
 
@@ -61,7 +62,7 @@ namespace team09
                     //If the event has already completed, ignore it
                     if (activeTime > e.startTime + e.duration) continue;
                     //If the event has started, run it
-                    if (activeTime - startTime > e.startTime)
+                    if (activeTime > e.startTime)
                     {
                         e.run();
                     }
@@ -69,12 +70,14 @@ namespace team09
             }
         }
 
-        protected override void OnGameStart()
+        public void Activate()
         {
-            //Set start time
             startTime = Time.timeAsDouble;
+        }
 
-            start = true;
+        public void Deactivate()
+        {
+            startTime = -1;
         }
     }
 
@@ -236,8 +239,19 @@ namespace team09
                     bulletEvent.target = (Transform)EditorGUILayout.ObjectField("Target", bulletEvent.target, typeof(Transform), true);
                     break;
 
+                case BehaviourType.AimedPosition:
+                    bulletEvent.direction = EditorGUILayout.FloatField("Direction", bulletEvent.direction);
+                    bulletEvent.target = (Transform)EditorGUILayout.ObjectField("Target", bulletEvent.target, typeof(Transform), true);
+                    break;
+
                 case BehaviourType.Spiral:
+                    bulletEvent.direction = EditorGUILayout.FloatField("Starting Direction", bulletEvent.direction);
                     bulletEvent.intervalAngle = EditorGUILayout.FloatField("Delta Angle", bulletEvent.intervalAngle);
+                    break;
+
+                case BehaviourType.MoveLine:
+                    bulletEvent.direction = EditorGUILayout.FloatField("Direction", bulletEvent.direction);
+                    bulletEvent.intervalDistance = EditorGUILayout.FloatField("Delta Position", bulletEvent.intervalDistance);
                     break;
 
                 case BehaviourType.RandomRotation:

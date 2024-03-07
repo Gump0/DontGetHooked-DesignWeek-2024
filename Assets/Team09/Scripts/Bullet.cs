@@ -12,6 +12,8 @@ namespace team09
         //Reference to the bullet's rigidbody2d
         protected Rigidbody2D rb;
 
+        private bool seen = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -22,6 +24,19 @@ namespace team09
         private void FixedUpdate()
         {
             Move();
+        }
+
+        private void OnBecameVisible()
+        {
+            seen = true;
+        }
+
+        private void OnBecameInvisible()
+        {
+            if(seen)
+            {
+                Destroy(gameObject);
+            }
         }
 
         //Initializes bullet with the given speed

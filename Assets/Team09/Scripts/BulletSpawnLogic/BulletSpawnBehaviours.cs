@@ -9,7 +9,9 @@ namespace team09
     {
         None,
         Aimed,
+        AimedPosition,
         Spiral,
+        MoveLine,
         RandomRotation,
         RandomPosition,
         RandomSpawnPoint,
@@ -30,15 +32,36 @@ namespace team09
             pattern.run(speed, spawnPoint, targetAngle, extraArgs);
         }
 
+        public static void aimedPosition(BulletPattern pattern, Vector3 spawnPoint, float speed, float direction, Vector3 target, params object[] extraArgs)
+        {
+            float radians = direction * Mathf.Deg2Rad;
+            Vector3 offset = target - spawnPoint;
+            float xPos = Mathf.Cos(radians) * spawnPoint.x + -Mathf.Sin(radians) * offset.x;
+            float yPos = Mathf.Cos(radians) * spawnPoint.y + Mathf.Sin(radians) * offset.y;
+            Vector3 pos = new Vector3(xPos, yPos);
+
+            pattern.run(speed, pos, direction, extraArgs);
+        }
+
         //Spiral behaviour
         //Changes the direction of the pattern by the given interval each time a bullet is spawned
-        public static void spiral(BulletPattern pattern, Vector3 spawnPoint, float speed, float intervalAngle, float[] counter, params object[] extraArgs)
+        public static void spiral(BulletPattern pattern, Vector3 spawnPoint, float speed, float startAngle, float intervalAngle, float[] counter, params object[] extraArgs)
         {
-            float direction = intervalAngle * counter[0];
+            float direction = startAngle + intervalAngle * counter[0];
             //Yes this is fucked up and gross it's a counter in spirit
             counter[0] += Time.deltaTime / pattern.getInterval();
 
             pattern.run(speed, spawnPoint, direction, extraArgs);
+        }
+
+        public static void moveLine(BulletPattern pattern, Vector3 spawnPoint, float speed, float direction, float intervalDistance, float[] counter, params object[] extraArgs)
+        {
+            float offset = intervalDistance * counter[0];
+            Vector3 pos = spawnPoint + new Vector3(-Mathf.Sin(direction * Mathf.Deg2Rad), Mathf.Cos(direction * Mathf.Deg2Rad)) * offset;
+            //Yes this is fucked up and gross it's a counter in spirit
+            counter[0] += Time.deltaTime / pattern.getInterval();
+
+            pattern.run(speed, pos, direction, extraArgs);
         }
 
         //Random rotation behaviour
