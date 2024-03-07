@@ -1054,6 +1054,8 @@ MonoBehaviour:
   getInputFrom: 0
   scoreDisplay: {fileID: 322164053}
   scoreText: {fileID: 477622031}
+  currentPlayerScore: 0
+  scoreIncreaseInterval: 10
   hasGameStarted: 0
   gameStarted: 0
 --- !u!222 &322164055
@@ -3281,11 +3283,11 @@ PrefabInstance:
       objectReference: {fileID: 1302104797}
     - target: {fileID: 2382287964213151181, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: 2382287964213151181, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.85
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 2382287964213151181, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3318,6 +3320,10 @@ PrefabInstance:
     - target: {fileID: 2382287964213151181, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551277476544844848, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
+      propertyPath: m_Pitch
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7659837419964781000, guid: 8141b700eb7831f479a019c5fbd788f8, type: 3}
       propertyPath: m_Name

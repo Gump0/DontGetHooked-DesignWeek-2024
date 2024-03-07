@@ -10,6 +10,7 @@ namespace team09{
 
         public GM gameManager;
 
+        public AudioSource hookedSFX;
 
         void OnTriggerEnter2D(Collider2D other){
             if(other.CompareTag ("Player")){
@@ -26,6 +27,11 @@ namespace team09{
 
 
                 GetComponent<PlayerSwim>().enabled = false;
+
+            if(hookedSFX.isPlaying == false)
+            {
+                hookedSFX.Play();
+            }
 
                 gameManager.alive = false;
                 gameManager.gameEnded = true;

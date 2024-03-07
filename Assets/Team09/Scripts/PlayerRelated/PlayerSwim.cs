@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace team09{
     public class PlayerSwim : MicrogameInputEvents{
@@ -28,6 +29,25 @@ namespace team09{
         public void Swim(){
             swimDir = stick.normalized; // (0, 0), (±1, 0), (0, ±1), (±0. 707, ±0.707)
             transform.Translate(swimDir * playerFishMoveSpeed);
+            
+
+            if(transform.position.x < -6)
+            {
+                transform.position = new Vector2(-6, transform.position.y);
+            }
+            if (transform.position.x > 6)
+            {
+                transform.position = new Vector2(6, transform.position.y);
+            }
+            if (transform.position.y < -5)
+            {
+                transform.position = new Vector2(transform.position.x, -5);
+            }
+            if (transform.position.y > 5)
+            {
+                transform.position = new Vector2(transform.position.x, 5);
+            }
+
         }
     }
 }

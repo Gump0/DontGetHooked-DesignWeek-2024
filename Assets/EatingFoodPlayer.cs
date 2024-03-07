@@ -8,6 +8,12 @@ namespace team09
     [RequireComponent(typeof(CircleCollider2D))]
     public class EatingFoodPlayer : MonoBehaviour
     {
+
+        public AudioSource spawnSFX;
+        public AudioSource eatSFX;
+
+        
+
         public GM gameManager;
         public PlayerSwim PS;
         public FoodSpawner FS;
@@ -20,6 +26,13 @@ namespace team09
                 Debug.Log("eat");
 
                 FindObjectOfType<ScoreTracking>().currentPlayerScore += 50;
+
+                if(eatSFX.isPlaying == false)
+                {
+                    eatSFX.Play();
+                }
+
+
                 
                 FindObjectOfType<PlayerSwim>().playerFishMoveSpeed += 0.0003f;
                 Quaternion newRotation = Quaternion.Euler(0, 0, 0);
