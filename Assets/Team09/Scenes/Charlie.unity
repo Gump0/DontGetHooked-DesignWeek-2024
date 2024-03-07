@@ -488,33 +488,33 @@ MonoBehaviour:
     behaviourType: 3
     spawnPoint: {fileID: 1454490642}
     bulletSpeed: 5
-    direction: -110
+    direction: -105
     interval: 0.5
     bulletPrefab: {fileID: 4705362223610236186, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
     extraArgInt: 72
-    extraArgFloat1: 25
+    extraArgFloat1: 30
     extraArgFloat2: 0
     extraArgFloat3: 4
     target: {fileID: 0}
-    intervalAngle: 10
+    intervalAngle: 7.5
     intervalDistance: 0
     variance: 0
     spawnPoints: []
     startTime: 0
-    duration: 2
+    duration: 2.1
   - patternType: 2
     behaviourType: 3
     spawnPoint: {fileID: 1454490642}
     bulletSpeed: 5
-    direction: -80
+    direction: -82.5
     interval: 0.5
     bulletPrefab: {fileID: 4705362223610236186, guid: 1d0fa6b8148c7274e90a0c00b73c2210, type: 3}
     extraArgInt: 72
-    extraArgFloat1: 25
+    extraArgFloat1: 30
     extraArgFloat2: 0
     extraArgFloat3: 0
     target: {fileID: 0}
-    intervalAngle: 10
+    intervalAngle: -7.5
     intervalDistance: 0
     variance: 0
     spawnPoints: []
