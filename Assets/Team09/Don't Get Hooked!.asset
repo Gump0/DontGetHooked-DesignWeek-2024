@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Don't Get Hooked!
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 9
   gameTitle: Don't Get Hooked!
   gameIcon: {fileID: 0}
-  prompt: Don't Get Hooked!
+  announcerText: Don't Get Hooked!
+  announcerAudioFile: Get Hooked-RX10MDc_164-01
+  _announcerAudio: {fileID: 8300000, guid: 62687329f9b8b734c8d5df6fb4e7746a, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: 27f36324ee74f8672b15e5fe4208d830, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
